@@ -35,13 +35,14 @@ int main()
 		do
 		{
 			//ask for the score
-			std::cout << "What score would you like to enter? " << endl;
+			std::cout << "What score would you like to enter? ";
 			std::cin >> scoreGiven;
+			std::cout << "\n";
 			
 			//convert input to an int
 			if (isNumber(scoreGiven) == false)
 			{
-				std::cout << "Incorrect format, entry must be a number 1-100." << endl;
+				std::cout << "Incorrect format, entry must be a number 1-100.\n\n\n" << endl;
 			}
 			else
 			{
@@ -49,24 +50,22 @@ int main()
 				//check if int is an acceptable value
 				if (score < 1 || score > 100)
 				{
-					std::cout << "Incorrect score, must be 1-100." << endl;
+					std::cout << "Incorrect score, must be 1-100.\n\n\n";
 
 				}
 				else
 				{
 					//add score to vector
 					scoreList.push_back(score);
+					//see if the user wants to add another score
+					if (scoreList.size() > 1)
+					{
+						std::cout << "Would you like to add another score? (Y/N): ";
+						std::cin >> play;
+						std::cout << "\n";
+					}
 				}
 			}
-		
-
-			//see if the user wants to add another score
-			if (scoreList.size() > 1)
-			{
-				std::cout << "\nWould you like to add another score? (Y/N): " << endl;
-				std::cin >> play;
-			}
-			
 
 		} while (play == 'y' || play == 'Y');
 

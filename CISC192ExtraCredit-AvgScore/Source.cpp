@@ -39,11 +39,12 @@ int main()
 			std::cin >> scoreGiven;
 			std::cout << "\n";
 			
-			//convert input to an int
+			//check if entered line was int and display error message if not
 			if (isNumber(scoreGiven) == false)
 			{
 				std::cout << "Incorrect format, entry must be a number 1-100.\n\n\n" << endl;
 			}
+			//if string contains only digits, convert to int
 			else
 			{
 				score = std::stoi(scoreGiven);
